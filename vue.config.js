@@ -5,11 +5,11 @@ module.exports = defineConfig({
     // //端口号
     // port: 8888,
     // // 主机名
-    // host: 'localhost',
+    host: 'localhost',
     // // 是否自动打开浏览器
-    // open: true,
+    open: true,
     // // 是否开启https
-    // https: false,
+    https: false,
     proxy: {
       [process.env.VUE_APP_BASE_API]: {
         target: process.env.VUE_APP_URL,

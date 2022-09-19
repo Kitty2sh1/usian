@@ -1,3 +1,3 @@
 import http from "./request"
 
-// export const getLogin=(params)=>http.post('/login',params)
+export const getLogin=(params)=>http.post('/login',params)

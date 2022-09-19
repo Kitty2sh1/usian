@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  // import {getLogin} from "../utils/index"
+  import {getLogin} from "../utils/index"
 export default {
 data() {
 return {
@@ -18,9 +18,9 @@ return {
 methods: {},
 computed: {},
 created() {
-//  getLogin(this.form).then(res=>{
-//   console.log(res);
-//  })
+ getLogin(this.form).then(res=>{
+  console.log(res);
+ })
 }
 }
 </script>
