@@ -1,9 +1,16 @@
 import axios from "axios"
-import { Loading } from "element-ui"
+import { Loading, Message } from "element-ui"
+import store from "../store"
 const instance = axios.create({
   // baseURL: process.env.VUE_APP_BASE_API,
   timeout: 3000
 });
+
+// 对应提示
+const exceptionMessage = {
+  2000: '登录成功'
+}
+
 
 var loading;
 // 添加请求拦截器
@@ -17,7 +24,8 @@ instance.interceptors.request.use(function (config) {
     background: 'rgba(0, 0, 0, 0.7)'
   })
   // 请求头token
-  config.headers.token = window.localStorage.getItem('token')
+  const token = store.state.token
+  if (token) config.headers.authorization = 'Bearer ' + token
   return config;
 }, function (error) {
   // 对请求错误做些什么
@@ -29,6 +37,17 @@ instance.interceptors.request.use(function (config) {
 instance.interceptors.response.use(function (response) {
   // 对响应数据做点什么
   loading.close();
+  // console.log(response,'response');
+  if (response.status < 400) {
+    return response.data.data
+  }
+
+  if (response.status === 401) {
+    // token过期处理
+    return
+  }
+  // 传参   错误信息
+  _showError(response.data.code, response.data.message)
   return response;
 }, function (error) {
   // 对响应错误做点什么
@@ -37,7 +56,15 @@ instance.interceptors.response.use(function (response) {
 });
 
 
-//   option== 封装api  return request({})
+// code 错误提示 message
+const _showError = (code, message) => {
+  let title
+  // exceptionMessage自定义提示信息
+  title = exceptionMessage[code] || message || '发生未知错误'
+  Message.error(title)
+}
+
+// option== 封装api  return request({})
 const request = (options) => {
   // 如果请求里有method传参方式的话，就用请求里的，如果没有就默认是get传参
   options.method = options.method || 'get'

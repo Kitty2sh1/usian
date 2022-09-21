@@ -1,6 +1,6 @@
 <template>
-  <div class="login">
-
+  <div class="home">
+    <h1>主页</h1>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ created() {}
 </script>
 
 <style lang="scss" scoped>
-  .login {
+  .home {
 
   }
 </style>
