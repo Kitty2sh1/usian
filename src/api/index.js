@@ -15,7 +15,14 @@ const getInfoAdmin=(params)=>{
         params,
     })
 }
+const getLogout=()=>{
+    return request({
+        url:"/user/logout",
+        method:"POST"
+    })
+}
 export default {
     getLogin,
-    getInfoAdmin
+    getInfoAdmin,
+    getLogout
 }

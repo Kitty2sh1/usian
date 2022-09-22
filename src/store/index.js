@@ -29,8 +29,16 @@ export default new Vuex.Store({
       state.userinfo = userinfo
       // utils/auto.js里封装的存储userinfo方法
       setItemUserInfo(userinfo)
+    },
+    // 删除
+    REMOVE_TOKEN_USERINFO(state) {
+      state.token = ''
+      state.userinfo = ''
+      removeItemTokenUserInfo()
+      console.log(state.token, state.userinfo);
     }
   },
+
   actions: {
     // 登录方法
     async queryLogin({ commit }, loginForm) {
@@ -54,6 +62,23 @@ export default new Vuex.Store({
         return response
       } catch (error) {
         console.log(error.message);
+      }
+    },
+    // 退出登录
+    async queryLogout({ commit }) {
+      try {
+        const response = await request.getLogout()
+        console.log(response);
+
+        // 删除本地token以及userinfo
+        // 方法1
+        // commit('SET_TOKEN', '')
+        // commit('SET_USERINFO', '')
+        // 方法2
+        commit('REMOVE_TOKEN_USERINFO')
+        return response
+      } catch (error) {
+
       }
     }
   },

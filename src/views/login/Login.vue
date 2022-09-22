@@ -58,11 +58,11 @@ export default {
       });
     },
     // 登录方法
-     async queryLogin() {
-      const token=await this.$store.dispatch('queryLogin',this.ruleForm)
-      if(!token) return
-      const userinfo=await this.$store.dispatch('queryUserInfo')
-      if(!userinfo) return
+    async queryLogin() {
+      const token = await this.$store.dispatch('queryLogin', this.ruleForm)
+      if (!token) return
+      const userinfo = await this.$store.dispatch('queryUserInfo')
+      if (!userinfo) return
       // 提示信息
       this.$message({
         message: '登录成功',

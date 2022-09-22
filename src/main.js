@@ -8,6 +8,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
+// 页面鉴权
+import './authentication'
 Vue.config.productionTip = false
 
 new Vue({
