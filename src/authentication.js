@@ -23,9 +23,9 @@ routers.beforeEach(async (to, from, next) => {
             // 获取用户信息userinfo
             let userinfo = store.getters.userinfo
             // typeof判断userinfo类型是否是object
-            // 满足条件返回  JSON.parse(userinfo)
+            // 满足条件返回  JSON.stringify(userinfo)
             // 不满足条件返回空字符串''
-            userinfo = typeof userinfo === 'object' ? JSON.parse(userinfo) : ''
+            userinfo = typeof userinfo === 'object' ? JSON.stringify(userinfo) : userinfo
             //  if判断userinfo===''或==='{}'  userinfo为空值就调用用户信息接口
             if (userinfo === '' || userinfo === '{}') {
                 // 用户信息接口

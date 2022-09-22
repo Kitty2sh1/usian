@@ -23,5 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app-main {}
+.app-main {
+    height: 100%;
+}
 </style>

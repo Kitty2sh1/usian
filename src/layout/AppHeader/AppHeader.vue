@@ -2,8 +2,10 @@
   <div class="app-header">
     <div class="left">
       <!-- logo -->
-      <el-avatar src="https://img1.imgtp.com/2022/09/22/vXELZcAw.jpg"></el-avatar>
-      肥鱼会员管理系统
+      <router-link to="/">
+        <el-avatar src="https://img1.imgtp.com/2022/09/22/vXELZcAw.jpg"></el-avatar>
+        肥鱼会员管理系统
+      </router-link>
     </div>
     <div class="right">
       <!-- 用户 -->
@@ -75,6 +77,11 @@ export default {
 
     ::v-deep .el-avatar {
       vertical-align: middle;
+    }
+
+    ::v-deep .router-link-active {
+      color: #fff;
+      text-decoration: none;
     }
   }
 
