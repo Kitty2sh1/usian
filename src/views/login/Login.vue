@@ -4,10 +4,10 @@
       <h1>会员管理系统</h1>
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
         <el-form-item label="账号" prop="username">
-          <el-input v-model="ruleForm.username"></el-input>
+          <el-input v-model.trim="ruleForm.username"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input v-model="ruleForm.password"></el-input>
+          <el-input v-model.trim="ruleForm.password"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="loginSubmitForm('ruleForm')">登录</el-button>

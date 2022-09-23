@@ -30,6 +30,7 @@ export default {
     font-family: '楷体';
     font-size: 40px;
     margin-top: 150px;
+    text-align: center;
   }
 }
 </style>
