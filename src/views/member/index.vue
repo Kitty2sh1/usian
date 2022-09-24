@@ -68,18 +68,18 @@
                 <el-form-item label="会员姓名" prop="name">
                     <el-input v-model="memberForm.name"></el-input>
                 </el-form-item>
-                <el-form-item label="会员生日">
+                <el-form-item label="会员生日" prop="birthday">
                     <el-date-picker value-format="yyyy-MM-dd" v-model="memberForm.birthday" type="date"
                         placeholder="会员生日">
                     </el-date-picker>
                 </el-form-item>
-                <el-form-item label="手机号码">
+                <el-form-item label="手机号码" prop="phone">
                     <el-input v-model="memberForm.phone"></el-input>
                 </el-form-item>
-                <el-form-item label="开卡金额">
+                <el-form-item label="开卡金额" prop="money">
                     <el-input v-model="memberForm.money" value="0"></el-input>
                 </el-form-item>
-                <el-form-item label="可用积分">
+                <el-form-item label="可用积分" prop="integral">
                     <el-input v-model="memberForm.integral" value="0"></el-input>
                 </el-form-item>
                 <el-form-item prop="payType" label="支付类型">
@@ -88,7 +88,7 @@
                         </el-option>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="会员地址">
+                <el-form-item label="会员地址" prop="address">
                     <el-input type="textarea" v-model="memberForm.address" value="0"></el-input>
                 </el-form-item>
             </el-form>
