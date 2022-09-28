@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     token: getItemToken() || "",        //utils/auto.js里封装的获取token方法
-    userinfo: getItemUserInfo() || ""   //utils/auto.js里封装的获取userinfo方法
+    userinfo: getItemUserInfo() || "",  //utils/auto.js里封装的获取userinfo方法
   },
   getters: {
     token(state) {

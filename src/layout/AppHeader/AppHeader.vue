@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     user() {
-      return this.$store.getters.userInfo.name || ''
+      return this.$store.getters.userInfo.username || ''
     }
   },
   created() { }

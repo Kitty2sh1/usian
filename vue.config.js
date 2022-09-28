@@ -11,8 +11,8 @@ module.exports = defineConfig({
     // // 是否开启https
     https: false,
     proxy: {
-      // VUE_APP_BASE_API='/admin'
-      // VUE_APP_URL='http://ceshi5.dishait.cn/admin'
+      // VUE_APP_BASE_API='/meng'
+      // VUE_APP_URL='http://vue.mengxuegu.com/pro-api/'
       [process.env.VUE_APP_BASE_API]: {
         target: process.env['VUE_APP_URL'],
         changeOrigin: true,
@@ -20,8 +20,8 @@ module.exports = defineConfig({
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
       },
-      // VUE_APP_BASE_API1='/meng'
-      // VUE_APP_URL1='http://vue.mengxuegu.com/pro-api/'
+      // VUE_APP_BASE_API1='/admin'
+      // VUE_APP_URL1='http://ceshi5.dishait.cn/admin'
       [process.env.VUE_APP_BASE_API1]: {
         target: process.env['VUE_APP_URL1'],
         changeOrigin: true,

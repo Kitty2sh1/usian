@@ -2,7 +2,7 @@ import request from "@/utils/request";
 // 登录
 const getLogin = (data) => {
     return request({
-        url: "/user/login",
+        url: "/admin/login",
         method: "POST",
         data
     })
@@ -10,7 +10,7 @@ const getLogin = (data) => {
 // 用户信息
 const getInfoAdmin=(params)=>{
     return request({
-        url:"/user/info/admin",
+        url:"/admin/getUserInfo",
         method:"GET",
         params,
     })
@@ -18,7 +18,7 @@ const getInfoAdmin=(params)=>{
 // 退出登录
 const getLogout=()=>{
     return request({
-        url:"/user/logout",
+        url:"/admin/logout",
         method:"POST"
     })
 }

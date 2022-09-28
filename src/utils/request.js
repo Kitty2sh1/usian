@@ -37,9 +37,13 @@ instance.interceptors.request.use(function (config) {
 instance.interceptors.response.use(function (response) {
   // 对响应数据做点什么
   loading.close();
-  // console.log(response,'response');
+  console.log(response,'response');
   if (response.status < 400) {
-    return response.data.data
+    if(response.data.data){
+      return response.data.data
+    }else{
+      return response.data.msg
+    }
   }
 
   if (response.status === 401) {
