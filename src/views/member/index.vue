@@ -220,6 +220,8 @@ export default {
                 type: 'warning'
             }).then(async () => {
                 try {
+                    this.currentPage = 1
+                    this.handleReset()
                     const response = await member.getRemoveMember(id)
                     // console.log(response);
                     this.$message({
@@ -316,13 +318,13 @@ export default {
                 const response = await member.getQueryMember(id)
                 console.log(response);
                 // 查询单个会员复制给dialogForm
-                response.payType=response.payType=='1'?"现金":response.payType=='2'?"微信":response.payType=='3'?'支付宝':"银行卡"
+                response.payType = response.payType == '1' ? "现金" : response.payType == '2' ? "微信" : response.payType == '3' ? '支付宝' : "银行卡"
                 this.dialogForm = response
 
             } catch (error) {
                 console.log(error.message);
             }
-        }, 
+        },
     },
     computed: {},
     created() {
@@ -351,6 +353,7 @@ export default {
     ::v-deep .el-select {
         width: 110px;
     }
+
     padding-top: 20px;
 }
 </style>

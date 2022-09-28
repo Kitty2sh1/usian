@@ -214,6 +214,8 @@ export default {
         type: 'warning'
       }).then(async () => {
         try {
+          this.currentPage = 1
+          this.handleReset()
           const response = await goods.getRemoveGoods(id)
           // console.log(response);
           this.$message({

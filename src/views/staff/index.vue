@@ -169,6 +169,8 @@ export default {
                 type: 'warning'
             }).then(async () => {
                 try {
+                    this.currentPage = 1
+                    this.handleReset()
                     const response = await staff.getRemoveStaff(id)
                     console.log(response);
                     this.$message({
